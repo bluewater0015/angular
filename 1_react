@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/com.css" />
+	<style>
+		/* .cssName{
+			color: red;
+		} */
+	</style>
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/babel">
+		var Hello = React.createClass({
+			render: function(){
+				var styleObj={
+					color: 'red',
+					fontSize: '44px'
+				}
+				return <h1 style={styleObj}>
+					hello {this.props.title} {this.props.name}
+				</h1>;
+			}
+		});
+		ReactDOM.render(
+			<Hello name="xiao" title="Mr" />,
+			document.getElementById('box')
+		);
+		document.getElementById('box').style.paddingLeft = '104px';
+	</script>
+</body>
+</html>
